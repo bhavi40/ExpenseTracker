@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp">  <!-- Add padding here to avoid repetitive margin specifications -->
+
+    <!-- Section for Today's Total -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="18sp"
+        android:text="@string/today_total" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
+    <!-- Expense Display Section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/total_expense_sum_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:gravity="start|center_vertical"
+            android:textSize="44sp"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/total_expense_currency_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_toEndOf="@id/total_expense_sum_text_view"
+            android:gravity="end|center_vertical"
+            android:paddingEnd="4dp"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <!-- Section for Today's Expenses -->
+    <TextView
+        android:id="@+id/totalExpenseListHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="18sp"
+        android:text="@string/today_expenses" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="false"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
